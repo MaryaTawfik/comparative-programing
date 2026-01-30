@@ -1,9 +1,14 @@
 from collections import Counter
+
 class Solution:
     def majorityElement(self, nums: List[int]) -> int:
-        n=len(nums)
-        c=Counter(nums)
-        for i , j in c.items():
-            if j>n/2:
+        freq_dict = Counter(nums)
+        
+        for i,j in freq_dict.items():
+            if j>len(nums)//2:
                 return i
+                
+        
+        
+
         
