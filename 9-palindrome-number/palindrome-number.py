@@ -1,15 +1,25 @@
 class Solution:
     def isPalindrome(self, x: int) -> bool:
-        # Negative numbers and multiples of 10 (except 0) are not palindromes
-        if x < 0 or (x % 10 == 0 and x != 0):
+        y=str(x)
+        z=y[::-1]
+         
+        if y==z:
+            return True
+        else:
             return False
+       
 
-        reversed_half = 0
-        while x > reversed_half:
-            digit = x % 10
-            reversed_half = reversed_half * 10 + digit
-            x //= 10
+#         # Negative numbers and multiples of 10 (except 0) are not palindromes
+#         if x < 0 or (x % 10 == 0 and x != 0):
+#             return False
 
-        # For even length: x == reversed_half
-        # For odd length: x == reversed_half // 10
-        return x == reversed_half or x == reversed_half // 10
+#         reversed_half = 0
+#         while x > reversed_half:
+#             digit = x % 10
+#             reversed_half = reversed_half * 10 + digit
+#             x //= 10
+
+#         # For even length: x == reversed_half
+#         # For odd length: x == reversed_half // 10
+#         return x == reversed_half or x == reversed_half // 10
+        
