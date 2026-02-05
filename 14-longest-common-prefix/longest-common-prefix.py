@@ -2,20 +2,16 @@ from typing import List
 
 class Solution:
     def longestCommonPrefix(self, strs: List[str]) -> str:
-        if not strs:
-            return ""
+        strs=sorted(strs)
+        res=[]
+        p1,p2=0,0
         
-        # Sort the array so the most different strings are at the ends
-        strs.sort()
-        
-        # Compare only the first and last strings
-        first, last = strs[0], strs[-1]
-        prefix = []
-        
-        for i in range(min(len(first), len(last))):
-            if first[i] == last[i]:
-                prefix.append(first[i])
+        while p1<len(strs[0]) and p2<len(strs[-1]):
+            if strs[0][p1]== strs[len(strs)-1][p2]:
+                res.append(strs[0][p1])
+                p1+=1
+                p2+=1
             else:
-                break
+                break 
+        return "".join(res)
         
-        return "".join(prefix)
