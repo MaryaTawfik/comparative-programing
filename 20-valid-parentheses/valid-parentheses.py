@@ -4,11 +4,15 @@ class Solution:
         mapping = {')': '(', '}': '{', ']': '['}
         
         for char in s:
-            if char in mapping:  # it's a closing bracket
-                top_element = stack.pop() if stack else '#'
+            if char in mapping:  
+                if stack:
+                    top_element = stack.pop()
+                else:
+                    top_element='#'
                 if mapping[char] != top_element:
                     return False
             else:
                 stack.append(char)
         
         return not stack
+
