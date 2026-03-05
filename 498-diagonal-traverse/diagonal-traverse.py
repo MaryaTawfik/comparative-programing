@@ -1,5 +1,5 @@
-# class Solution:
-#     def findDiagonalOrder(self, mat: List[List[int]]) -> List[int]:
+class Solution:
+    def findDiagonalOrder(self, mat: List[List[int]]) -> List[int]:
 #         row=len(mat)
 #         col=len(mat[0])
 #         res=[]
@@ -33,8 +33,6 @@
 
 
 
-class Solution:
-    def findDiagonalOrder(self, mat: List[List[int]]) -> List[int]:
         row = len(mat)
         col = len(mat[0])
         res = []
@@ -47,7 +45,7 @@ class Solution:
                     res.append(mat[r][c])
                     r -= 1
                     c += 1
-                # Adjust position after reaching boundary
+                
                 if c >= col:
                     c = col - 1
                     r += 2
@@ -59,7 +57,7 @@ class Solution:
                     res.append(mat[r][c])
                     r += 1
                     c -= 1
-                # Adjust position after reaching boundary
+             
                 if r >= row:
                     r = row - 1
                     c += 2
