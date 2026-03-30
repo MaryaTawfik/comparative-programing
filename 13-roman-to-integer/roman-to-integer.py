@@ -1,5 +1,7 @@
 class Solution:
     def romanToInt(self, s: str) -> int:
+
+        
         roman_map = {
             'I': 1,
             'V': 5,
@@ -12,7 +14,6 @@ class Solution:
         
         total = 0
         for i in range(len(s)):
-            # If current value < next value, subtract it
             if i + 1 < len(s) and roman_map[s[i]] < roman_map[s[i + 1]]:
                 total -= roman_map[s[i]]
             else:
