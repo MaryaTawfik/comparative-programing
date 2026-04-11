@@ -6,8 +6,8 @@ class Solution:
 
         while left <= right:
             if people[left] + people[right] <= limit:
-                left += 1  # pair lightest with heaviest
+                left += 1  
             right -= 1
-            boats += 1  # one boat used
+            boats += 1 
 
         return boats
