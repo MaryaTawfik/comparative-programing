@@ -1,1 +1,1 @@
-<h2>sort-an-array Notes</h2><hr>[ Time taken: 1hr 46m 39s ]
+<h2>sort-an-array Notes</h2><hr>[ Time taken: 15m 24s ]
