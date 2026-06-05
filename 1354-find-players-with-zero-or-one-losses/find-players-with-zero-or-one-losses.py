@@ -1,25 +1,39 @@
+from collections import Counter
 class Solution:
     def findWinners(self, matches: List[List[int]]) -> List[List[int]]:
-        loss_count = {}
-        for winner, loser in matches:
-            if winner not in loss_count:
-                loss_count[winner] = 0 
-            if loser not in loss_count:
-                loss_count[loser] = 0
-            loss_count[loser] += 1  
-        no_loss = []
-        one_loss = []
+        winners=[]
+        loosers=[]
+        answ=set()
+        ansl=set()
+        ans=[]
+        for i ,j in matches:
+            winners.append(i)
+            loosers.append(j)
         
-        # Classify players based on their loss count
-        for player, losses in loss_count.items():
-            if losses == 0:
-                no_loss.append(player)
-            elif losses == 1:
-                one_loss.append(player)
+        counter_looser = Counter(loosers)
         
-        # Sort the results for consistent output
-        return [sorted(no_loss), sorted(one_loss)]
+        
 
+        for i in range(len(loosers)):
+            if counter_looser[loosers[i]] == 1:
+                ansl.add(loosers[i])
+        
+        for j in winners:
+            if j not in counter_looser:
+                answ.add(j)
+        ans_=list(answ)
+        ans__=list(ansl)
+        ans_.sort()
+        ans__.sort()
+        ans.append(ans_)
+        ans.append(ans__)
+        return(ans)
 
+        
 
+        
     
+
+            
+        
+        
