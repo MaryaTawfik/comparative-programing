@@ -5,4 +5,3 @@ class Solution:
             if target[i]>target[i-1]:
                 ans+=target[i]-target[i-1]
         return ans
-        
