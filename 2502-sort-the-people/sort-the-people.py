@@ -1,14 +1,8 @@
 class Solution:
     def sortPeople(self, names: List[str], heights: List[int]) -> List[str]:
-        people=zip(heights,names)
         for i in range(len(names)):
-            swapped=False
-            for j in range(1,len(names)-i):
-                if heights[j-1]<heights[j]:
-                    names[j-1],names[j] = names[j],names[j-1]
-                    heights[j-1],heights[j]=heights[j],heights[j-1]
-                    swapped=True
-            if not swapped:
-                return names
+            for j in range(i+1,len(names)):
+                if heights[i]<heights[j]:
+                    heights[i],heights[j]=heights[j],heights[i]
+                    names[i],names[j]=names[j],names[i]
         return names
-            
