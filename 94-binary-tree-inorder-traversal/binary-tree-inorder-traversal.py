@@ -10,11 +10,11 @@ class Solution:
         result = []
 
         def inorder(node):
-            if not node:
+            if node is None:
                 return
-            inorder(node.left)       # 1. Visit left subtree
-            result.append(node.val)  # 2. Visit root
-            inorder(node.right)      # 3. Visit right subtree
+            inorder(node.left)
+            result.append(node.val)
+            inorder(node.right)
 
         inorder(root)
         return result
